@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>DownGrab — download videos from YouTube, TikTok, Pinterest in Telegram 😺</title>
+<meta name="description" content="DownGrab (@DownGrabBot) is a free Telegram bot that downloads videos from YouTube, TikTok, Pinterest, X and more. No sign-up: send a link and get the file right in the chat.">
+<meta name="keywords" content="video downloader, download youtube video, tiktok downloader, pinterest video downloader, telegram video downloader bot, download videos telegram, DownGrab">
+<meta name="robots" content="index,follow">
+<meta name="theme-color" content="#0b0d12">
+<meta name="color-scheme" content="dark">
+<link rel="canonical" href="https://downgrab.github.io/en/">
+<link rel="alternate" hreflang="ru" href="https://downgrab.github.io/">
+<link rel="alternate" hreflang="en" href="https://downgrab.github.io/en/">
+<link rel="alternate" hreflang="uk" href="https://downgrab.github.io/uk/">
+<link rel="alternate" hreflang="x-default" href="https://downgrab.github.io/">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="DownGrab">
+<meta property="og:title" content="DownGrab — download videos from YouTube, TikTok, Pinterest in Telegram 😺">
+<meta property="og:description" content="DownGrab (@DownGrabBot) is a free Telegram bot that downloads videos from YouTube, TikTok, Pinterest, X and more. No sign-up: send a link and get the file right in the chat.">
+<meta property="og:url" content="https://downgrab.github.io/en/">
+<meta property="og:image" content="https://downgrab.github.io/og.png">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_US"><meta property="og:locale:alternate" content="ru_RU"><meta property="og:locale:alternate" content="uk_UA">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="DownGrab — download videos from YouTube, TikTok, Pinterest in Telegram 😺">
+<meta name="twitter:description" content="DownGrab (@DownGrabBot) is a free Telegram bot that downloads videos from YouTube, TikTok, Pinterest, X and more. No sign-up: send a link and get the file right in the chat.">
+<meta name="twitter:image" content="https://downgrab.github.io/og.png">
+<script type="application/ld+json">[{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "DownGrab", "alternateName": "@DownGrabBot", "applicationCategory": "MultimediaApplication", "operatingSystem": "Telegram", "url": "https://downgrab.github.io/en/", "description": "DownGrab (@DownGrabBot) is a free Telegram bot that downloads videos from YouTube, TikTok, Pinterest, X and more. No sign-up: send a link and get the file right in the chat.", "inLanguage": "en", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "sameAs": ["https://t.me/DownGrab", "https://t.me/DownGrabBot"]}, {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Is it free?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, the bot is free. There are daily limits (see /limits), and you can optionally get VIP with Telegram Stars."}}, {"@type": "Question", "name": "Do I need to register?", "acceptedAnswer": {"@type": "Answer", "text": "No. All you need is Telegram — open the bot and send a link."}}, {"@type": "Question", "name": "Which sites are supported?", "acceptedAnswer": {"@type": "Answer", "text": "YouTube, TikTok, Pinterest, VK, X (Twitter), SoundCloud and more. Just try sending a link."}}, {"@type": "Question", "name": "Can I use it in a group?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Add @DownGrabBot to your chat with the “Add to group” button — it will respond to links and commands."}}, {"@type": "Question", "name": "Something doesn't work — where do I ask?", "acceptedAnswer": {"@type": "Answer", "text": "In the support chat — the link is at the bottom of the page."}}]}]</script>
+<style>
+:root{--bg:#0b0d12;--bg2:#12151d;--card:#161a24;--line:#232838;--txt:#e9ecf3;--mut:#9aa3b5;--acc:#2aabee;--acc2:#7c5cff}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,Ubuntu,sans-serif;background:var(--bg);color:var(--txt)}
+a{color:var(--acc);text-decoration:none}
+.w{max-width:1080px;margin:0 auto;padding:0 20px}
+header{position:sticky;top:0;z-index:5;background:rgba(11,13,18,.85);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{display:flex;align-items:center;gap:8px;font-weight:800;font-size:20px;color:var(--txt)}
+.logo i{font-style:normal;font-size:26px}
+.langs{display:flex;gap:4px}
+.langs a{padding:4px 10px;border-radius:8px;color:var(--mut);font-size:14px;font-weight:600}
+.langs a[aria-current]{background:var(--card);color:var(--txt);border:1px solid var(--line)}
+.hero{padding:56px 0 40px;text-align:center;background:radial-gradient(700px 360px at 50% -40px,rgba(42,171,238,.22),transparent 70%),radial-gradient(500px 300px at 85% 10%,rgba(124,92,255,.18),transparent 70%)}
+.cat{font-size:72px;line-height:1;margin-bottom:12px}
+h1{font-size:clamp(30px,6vw,54px);line-height:1.12;margin:0 auto 16px;max-width:880px;letter-spacing:-.02em}
+h1 span{background:linear-gradient(90deg,var(--acc),var(--acc2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{color:var(--mut);font-size:clamp(17px,2.4vw,20px);max-width:620px;margin:0 auto 28px}
+.btns{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:52px;padding:0 24px;border-radius:14px;font-weight:700;font-size:17px;border:1px solid var(--line);color:var(--txt);background:var(--card);transition:transform .15s,filter .15s}
+.btn:hover{transform:translateY(-2px);filter:brightness(1.1)}
+.btn.p{background:linear-gradient(135deg,#2aabee,#229ed9);border:0;color:#fff;box-shadow:0 10px 30px rgba(42,171,238,.35)}
+.btn svg{width:22px;height:22px;fill:currentColor}
+.handle{margin-top:14px;color:var(--mut);font-size:14px}
+section{padding:48px 0}
+h2{font-size:clamp(24px,4vw,34px);margin:0 0 24px;text-align:center;letter-spacing:-.01em}
+.grid{display:grid;gap:16px}
+@media(min-width:720px){.g3{grid-template-columns:repeat(3,1fr)}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px}
+.card h3{margin:6px 0 6px;font-size:18px}.card p{margin:0;color:var(--mut)}
+.num{display:inline-grid;place-items:center;width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,var(--acc),var(--acc2));font-weight:800;color:#fff}
+.ico{font-size:28px}
+.sites{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+.chip{display:flex;align-items:center;gap:8px;padding:10px 16px;border-radius:999px;background:var(--card);border:1px solid var(--line);font-weight:600}
+.chip b{width:10px;height:10px;border-radius:50%}
+.muted{color:var(--mut);text-align:center;margin:14px 0 0;font-size:14px}
+.alt{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+details{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:4px 18px;margin:0 auto 10px;max-width:760px}
+summary{cursor:pointer;font-weight:700;padding:12px 0;list-style:none}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";float:right;color:var(--mut);font-weight:400}
+details[open] summary::after{content:"–"}
+details p{margin:0 0 14px;color:var(--mut)}
+.final{text-align:center}
+footer{border-top:1px solid var(--line);padding:28px 0 36px;color:var(--mut);font-size:14px}
+.fl{display:flex;flex-wrap:wrap;gap:16px;justify-content:center;margin-bottom:12px}
+footer p{text-align:center;margin:6px 0}
+</style>
+</head>
+<body>
+<header><div class="w nav"><a class="logo" href="../"><i aria-hidden="true">😺</i>DownGrab</a><nav class="langs" aria-label="Language"><a href="../" hreflang="ru" lang="ru">RU</a><a href="../en/" hreflang="en" lang="en" aria-current="page">EN</a><a href="../uk/" hreflang="uk" lang="uk">UA</a></nav></div></header>
+<main>
+<div class="hero"><div class="w">
+<div class="cat" aria-hidden="true">😺</div>
+<h1>Download videos from YouTube, TikTok, Pinterest — <span>in Telegram</span></h1>
+<p class="lead">Send a link to the bot and get the video right in the chat. Free, no sign-up.</p>
+<div class="btns"><a class="btn p" href="https://t.me/DownGrabBot?start=site"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9.78 15.27l-.4 5.6c.57 0 .82-.25 1.12-.54l2.69-2.57 5.58 4.08c1.02.57 1.75.27 2.02-.94L24.45 3.2c.33-1.5-.54-2.09-1.53-1.72L1.4 9.73c-1.47.57-1.45 1.39-.25 1.76l5.5 1.71 12.77-8.05c.6-.4 1.15-.18.7.22"/></svg>Open the bot</a><a class="btn" href="https://t.me/DownGrabBot?startgroup=true">➕ Add to group</a></div>
+<div class="handle">@DownGrabBot</div>
+</div></div>
+<section><div class="w"><h2>How it works</h2><div class="grid g3"><div class="card"><span class="num">1</span><h3>Send a link</h3><p>Copy a video link and send it to @DownGrabBot.</p></div><div class="card"><span class="num">2</span><h3>Choose</h3><p>Pick the quality or audio track if the bot offers options.</p></div><div class="card"><span class="num">3</span><h3>Get the file</h3><p>The bot sends the file right into the chat — save it or forward it.</p></div></div></div></section>
+<section class="alt"><div class="w"><h2>Supported sites</h2><div class="sites"><span class="chip"><b style="background:#ff0033"></b>YouTube</span><span class="chip"><b style="background:#25f4ee"></b>TikTok</span><span class="chip"><b style="background:#e60023"></b>Pinterest</span><span class="chip"><b style="background:#0077ff"></b>VK</span><span class="chip"><b style="background:#e7e9ea"></b>X / Twitter</span><span class="chip"><b style="background:#ff5500"></b>SoundCloud</span></div><p class="muted">…and more · SoundCloud — audio (MP3)</p></div></section>
+<section><div class="w"><h2>Features</h2><div class="grid g3"><div class="card"><div class="ico" aria-hidden="true">💬</div><h3>Private chat</h3><p>Just send a link to the bot in a private chat.</p></div><div class="card"><div class="ico" aria-hidden="true">👥</div><h3>Groups</h3><p>Add the bot to a group and it downloads videos from members&#x27; links. Admins can tune it with /settings.</p></div><div class="card"><div class="ico" aria-hidden="true">⚡</div><h3>Inline mode</h3><p>Type @DownGrabBot and a link in any chat to send a video without leaving the conversation.</p></div><div class="card"><div class="ico" aria-hidden="true">🎧</div><h3>Audio track choice</h3><p>If a video has several audio tracks, pick the one you need.</p></div><div class="card"><div class="ico" aria-hidden="true">⭐</div><h3>VIP with Telegram Stars</h3><p>No sponsors or ads, priority, higher limits and MP3 from any video — /vip.</p></div><div class="card"><div class="ico" aria-hidden="true">🎁</div><h3>Invite friends</h3><p>Get your referral link with /ref.</p></div></div></div></section>
+<section class="alt"><div class="w"><h2>FAQ</h2><details><summary>Is it free?</summary><p>Yes, the bot is free. There are daily limits (see /limits), and you can optionally get VIP with Telegram Stars.</p></details><details><summary>Do I need to register?</summary><p>No. All you need is Telegram — open the bot and send a link.</p></details><details><summary>Which sites are supported?</summary><p>YouTube, TikTok, Pinterest, VK, X (Twitter), SoundCloud and more. Just try sending a link.</p></details><details><summary>Can I use it in a group?</summary><p>Yes. Add @DownGrabBot to your chat with the “Add to group” button — it will respond to links and commands.</p></details><details><summary>Something doesn&#x27;t work — where do I ask?</summary><p>In the support chat — the link is at the bottom of the page.</p></details></div></section>
+<section class="final"><div class="w"><h2>Ready to download your first video?</h2><div class="btns"><a class="btn p" href="https://t.me/DownGrabBot?start=site"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9.78 15.27l-.4 5.6c.57 0 .82-.25 1.12-.54l2.69-2.57 5.58 4.08c1.02.57 1.75.27 2.02-.94L24.45 3.2c.33-1.5-.54-2.09-1.53-1.72L1.4 9.73c-1.47.57-1.45 1.39-.25 1.76l5.5 1.71 12.77-8.05c.6-.4 1.15-.18.7.22"/></svg>Open the bot</a><a class="btn" href="https://t.me/DownGrab">📢 Channel</a></div></div></section>
+</main>
+<footer><div class="w">
+<div class="fl"><a href="https://t.me/DownGrabBot?start=site">🤖 @DownGrabBot</a><a href="https://t.me/DownGrab">📢 Channel @DownGrab</a><a href="https://t.me/+D55q9Jy5iB1jYTU6">💬 Support</a><a href="https://t.me/DownGrabBot?startgroup=true">➕ Add to group</a></div>
+<p>DownGrab is not affiliated with YouTube, TikTok, Pinterest or other services mentioned. Only download content you have the rights to.</p>
+<p>© 2026 DownGrab 😺</p>
+</div></footer>
+</body>
+</html>
