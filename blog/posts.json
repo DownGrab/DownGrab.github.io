@@ -1,0 +1,32 @@
+[
+ {
+  "id": 1,
+  "text_html": "Channel created",
+  "videos": 0,
+  "service": true,
+  "unsupported": false,
+  "date": "2026-10-15T22:41:53+00:00",
+  "reply": false,
+  "images": []
+ },
+ {
+  "id": 4,
+  "text_html": "",
+  "videos": 0,
+  "service": false,
+  "unsupported": true,
+  "date": "2026-10-15T23:03:00+00:00",
+  "reply": false,
+  "images": []
+ },
+ {
+  "id": 5,
+  "text_html": "",
+  "videos": 0,
+  "service": false,
+  "unsupported": true,
+  "date": "2026-10-16T17:00:01+00:00",
+  "reply": false,
+  "images": []
+ }
+]
