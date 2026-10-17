@@ -58,7 +58,7 @@ SHARE_CSS = """.share{display:flex;flex-wrap:wrap;align-items:center;justify-con
 .share .tip{font-size:13px;color:#3ddc84;min-width:1px}
 @media(max-width:480px){.share .sl{flex-basis:100%;text-align:center;margin:0}.shrow .share .sl{text-align:left}}"""
 SHARE_JS = ("<script>(function(){document.querySelectorAll('.share').forEach(function(b){var u=b.dataset.url,t=b.dataset.text;"
- "var n=b.querySelector('.sh-native');if(n&&navigator.share&&matchMedia('(pointer:coarse)').matches){n.hidden=false;n.onclick=function(){navigator.share({title:document.title,text:t,url:u}).catch(function(){})}}"
+ "var n=b.querySelector('.sh-native');if(n&&navigator.share&&matchMedia('(pointer:coarse)').matches){n.hidden=false;n.onclick=function(){navigator.share({title:document.title,text:t+'\\n'+u}).catch(function(){})}}"
  "var c=b.querySelector('.sh-copy'),tip=b.querySelector('.tip');if(c){c.hidden=false;var ic=c.innerHTML;c.onclick=function(){var done=function(){c.classList.add('ok');c.innerHTML=b.dataset.okicon;if(tip)tip.textContent=c.dataset.done;"
  "setTimeout(function(){c.classList.remove('ok');c.innerHTML=ic;if(tip)tip.textContent=''},2000)};"
  "if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(u).then(done,function(){prompt('',u)})}else{prompt('',u)}}}})})()</script>")
@@ -66,9 +66,11 @@ SHARE_JS = ("<script>(function(){document.querySelectorAll('.share').forEach(fun
 def share_block(url, text, lang, label):
     L = SHARE_L10N[lang]; e = lambda s: html.escape(s, True)
     svg = lambda k: f'<svg viewBox="0 0 24 24" aria-hidden="true">{SHARE_ICONS[k]}</svg>'
-    links = [("tg", f"https://t.me/share/url?url={_q(url, safe='')}&text={_q(text, safe='')}"),
-             ("wa", f"https://wa.me/?text={_q(text + ' ' + url, safe='')}"),
-             ("vk", f"https://vk.com/share.php?url={_q(url, safe='')}"),
+    # text first, link last: Telegram puts `url` BEFORE `text`, so the whole message goes into `url`
+    msg = text + "\n" + url
+    links = [("tg", f"https://t.me/share/url?url={_q(msg, safe='')}"),
+             ("wa", f"https://wa.me/?text={_q(msg, safe='')}"),
+             ("vk", f"https://vk.com/share.php?url={_q(url, safe='')}&title={_q(text, safe='')}"),
              ("x", f"https://twitter.com/intent/tweet?url={_q(url, safe='')}&text={_q(text, safe='')}")]
     a = "".join(f'<a href="{e(h)}" target="_blank" rel="noopener nofollow" aria-label="{e(L[k])}" title="{e(L[k])}">{svg(k)}</a>' for k, h in links)
     return (f'<div class="share" role="group" aria-label="{e(label)}" data-url="{e(url)}" data-text="{e(text)}" data-okicon="{e(svg("ok"))}">'
