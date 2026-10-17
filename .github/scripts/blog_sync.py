@@ -77,6 +77,30 @@ def share_block(url, text, lang, label):
             f'<button type="button" class="sh-copy" hidden aria-label="{e(L["copy"])}" title="{e(L["copy"])}" data-done="{e(L["copied"])}">{svg("copy")}</button>'
             f'<span class="tip" aria-live="polite"></span></div>')
 # ---- end share block ----
+# ---- social links (same code in downgrab-site-build.py and .github/scripts/blog_sync.py) ----
+SOCIAL = [
+ ("tg", "https://t.me/DownGrab", {"ru": "Telegram-канал DownGrab", "en": "DownGrab Telegram channel", "uk": "Telegram-канал DownGrab"},
+  '<path d="M9.78 15.27l-.4 5.6c.57 0 .82-.25 1.12-.54l2.69-2.57 5.58 4.08c1.02.57 1.75.27 2.02-.94L24.45 3.2c.33-1.5-.54-2.09-1.53-1.72L1.4 9.73c-1.47.57-1.45 1.39-.25 1.76l5.5 1.71 12.77-8.05c.6-.4 1.15-.18.7.22" transform="translate(-.3 0) scale(.96)"/>'),
+ ("vk", "https://vk.ru/DownGrab", {"ru": "DownGrab во ВКонтакте", "en": "DownGrab on VK", "uk": "DownGrab у VK"},
+  '<path d="M13.2 18C6.6 18 2.8 13.5 2.6 6h3.3c.1 5.5 2.6 7.8 4.5 8.3V6h3.1v4.7c1.9-.2 3.9-2.4 4.6-4.7h3.1c-.5 2.9-2.7 5-4.2 5.9 1.5.7 4 2.6 4.9 6.1h-3.4c-.7-2.3-2.6-4.1-5-4.4V18h-.3z"/>'),
+ ("x", "https://x.com/DownGrabBot", {"ru": "DownGrab в X (Twitter)", "en": "DownGrab on X (Twitter)", "uk": "DownGrab в X (Twitter)"},
+  '<path d="M17.8 3h3.1l-6.8 7.7L22 21h-6.2l-4.9-6.4L5.3 21H2.2l7.2-8.3L1.8 3h6.4l4.4 5.8L17.8 3zm-1.1 16.2h1.7L7.4 4.7H5.6l11.1 14.5z"/>'),
+ ("fb", "https://facebook.com/groups/downgrab", {"ru": "Группа DownGrab в Facebook", "en": "DownGrab Facebook group", "uk": "Група DownGrab у Facebook"},
+  '<path d="M13.5 21.9v-7h2.4l.4-2.9h-2.8v-1.8c0-.8.4-1.6 1.6-1.6h1.3V6.1s-1.1-.2-2.2-.2c-2.3 0-3.7 1.4-3.7 3.9V12H8v2.9h2.5v7A10 10 0 1 1 13.5 21.9z"/>'),
+]
+SAME_AS = ["https://t.me/DownGrab", "https://t.me/DownGrabBot", "https://vk.ru/DownGrab", "https://x.com/DownGrabBot", "https://facebook.com/groups/downgrab"]
+SOCIAL_CSS = """.soc{display:flex;justify-content:center;gap:8px;margin:0 0 14px}
+.soc a{display:inline-grid;place-items:center;width:36px;height:36px;border-radius:10px;border:1px solid var(--line);background:var(--card);color:var(--mut);transition:color .15s,border-color .15s}
+.soc a:hover,.soc a:focus-visible{color:var(--txt);border-color:#3a4a66;text-decoration:none}
+.soc svg{width:18px;height:18px;fill:currentColor}"""
+
+def social_row(lang):
+    e = lambda s: html.escape(s, True)
+    return ('<nav class="soc" aria-label="' + {"ru": "Мы в соцсетях", "en": "Follow us", "uk": "Ми в соцмережах"}[lang] + '">' +
+            "".join(f'<a href="{u}" target="_blank" rel="me noopener" aria-label="{e(l[lang])}" title="{e(l[lang])}">'
+                    f'<svg viewBox="0 0 24 24" aria-hidden="true">{p}</svg></a>' for k, u, l, p in SOCIAL) + "</nav>")
+# ---- end social links ----
+ORG = {"@type": "Organization", "name": "DownGrab", "url": BASE_URL + "/", "logo": BASE_URL + "/apple-touch-icon.png", "sameAs": SAME_AS}
 
 def fetch(url, binary=False):
     req = urllib.request.Request(url, headers={"User-Agent": UA, "Accept-Language": "ru,en;q=0.8"})
@@ -285,7 +309,8 @@ article .body.rich blockquote{border-left:3px solid var(--acc);background:rgba(4
 .empty{text-align:center;padding:40px 20px}.empty .em{font-size:56px}
 """ + SHARE_CSS + """
 article+.shrow{margin:28px 0 0;padding:18px 0 0;border-top:1px solid var(--line)}article+.shrow .share{justify-content:flex-start}
-footer{border-top:1px solid var(--line);padding:24px 0 32px;margin-top:40px;color:var(--mut);font-size:14px;text-align:center}footer a{margin:0 8px}"""
+footer{border-top:1px solid var(--line);padding:24px 0 32px;margin-top:40px;color:var(--mut);font-size:14px;text-align:center}footer a{margin:0 8px}
+@media(max-width:380px){.logo{font-size:0}.logo i{font-size:26px}.links a{padding:6px 8px}}"""
 
 def shell(title, desc, canonical, body, rel, og_image=None, ld=None, current="blog", js=""):
     og = og_image or f"{BASE_URL}/og.png"
@@ -343,7 +368,7 @@ def render(entries, keep_imgs=frozenset()):
     body = (f'<h1>Блог DownGrab</h1><p class="sub">Новости и обновления бота @DownGrabBot — копия постов из канала '
             f'<a href="https://t.me/{CHANNEL}">@{CHANNEL}</a>.</p>{listing}'
             f'<div class="btns"><a class="btn p" href="{BOT}">🤖 Открыть бота</a><a class="btn" href="https://t.me/{CHANNEL}">📢 Подписаться на канал</a></div>')
-    ld = {"@context": "https://schema.org", "@type": "Blog", "name": "Блог DownGrab", "url": f"{BASE_URL}/blog/", "inLanguage": "ru"}
+    ld = {"@context": "https://schema.org", "@type": "Blog", "name": "Блог DownGrab", "url": f"{BASE_URL}/blog/", "inLanguage": "ru", "publisher": ORG}
     write(os.path.join(BLOG, "index.html"), shell("Блог DownGrab — новости бота для скачивания видео",
           "Новости и обновления DownGrab (@DownGrabBot) — Telegram-бота для скачивания видео из YouTube, TikTok, Pinterest и других сайтов.",
           f"{BASE_URL}/blog/", body, "../", ld=ld))
@@ -361,7 +386,7 @@ def render(entries, keep_imgs=frozenset()):
                 f'<p><a href="./">← Все посты</a></p>')
         og = f'{BASE_URL}/blog/img/{p["cover"]}' if p["cover"] else None
         ld = {"@context": "https://schema.org", "@type": "BlogPosting", "headline": p["title"][:110], "datePublished": p["date"],
-              "url": f'{BASE_URL}/blog/{name}', "inLanguage": "ru", "author": {"@type": "Organization", "name": "DownGrab"},
+              "url": f'{BASE_URL}/blog/{name}', "inLanguage": "ru", "author": ORG, "publisher": ORG,
               "mainEntityOfPage": f'{BASE_URL}/blog/{name}'}
         if og: ld["image"] = og
         write(os.path.join(BLOG, name), shell(f'{p["title"]} — блог DownGrab', p["desc"] or p["title"],
