@@ -41,6 +41,16 @@ article .body.rich blockquote{border-left:3px solid var(--acc);background:rgba(4
 .btns{display:flex;flex-wrap:wrap;gap:10px;margin:24px 0}.btn{display:inline-flex;align-items:center;gap:8px;min-height:48px;padding:0 20px;border-radius:14px;font-weight:700;border:1px solid var(--line);color:var(--txt);background:var(--card)}
 .btn:hover{text-decoration:none;filter:brightness(1.1)}.btn.p{background:linear-gradient(135deg,#2aabee,#229ed9);border:0;color:#fff}
 .empty{text-align:center;padding:40px 20px}.empty .em{font-size:56px}
+.share{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:10px}
+.share .sl{color:var(--mut);font-size:15px;margin-right:4px}
+.share a,.share button{display:inline-grid;place-items:center;width:42px;height:42px;border-radius:12px;border:1px solid var(--line);background:var(--card);color:var(--mut);cursor:pointer;padding:0;transition:color .15s,border-color .15s,transform .15s}
+.share a:hover,.share button:hover,.share a:focus-visible,.share button:focus-visible{color:var(--txt);border-color:#3a4a66;transform:translateY(-1px);text-decoration:none}
+.share svg{width:20px;height:20px;fill:currentColor}
+.share [hidden]{display:none}
+.share .ok{color:#3ddc84;border-color:#2c6b48}
+.share .tip{font-size:13px;color:#3ddc84;min-width:1px}
+@media(max-width:480px){.share .sl{flex-basis:100%;text-align:center;margin:0}.shrow .share .sl{text-align:left}}
+article+.shrow{margin:28px 0 0;padding:18px 0 0;border-top:1px solid var(--line)}article+.shrow .share{justify-content:flex-start}
 footer{border-top:1px solid var(--line);padding:24px 0 32px;margin-top:40px;color:var(--mut);font-size:14px;text-align:center}footer a{margin:0 8px}</style>
 </head>
 <body>
