@@ -38,5 +38,17 @@
   "date": "2026-10-17T14:04:59+00:00",
   "reply": false,
   "images": []
+ },
+ {
+  "id": 8,
+  "text_html": "<b><tg-emoji emoji-id=\"5417876320761696693\"><i class=\"emoji\" style=\"background-image:url('//telegram.org/img/emoji/40/E29C88.png')\"><b>✈</b></i></tg-emoji></b><b> Наши страницы во всех соцсетях</b>&#33;<br><br><blockquote>На данный момент мы есть в следующем:<br>- <a href=\"http://vk.ru/DownGrab\" target=\"_blank\" rel=\"noopener\" onclick=\"return confirm('Open this link?\\n\\n'+this.href);\">vk.ru/DownGrab</a><br>- <a href=\"http://x.com/DownGrabBot\" target=\"_blank\" rel=\"noopener\" onclick=\"return confirm('Open this link?\\n\\n'+this.href);\">x.com/DownGrabBot</a><br>- <a href=\"http://facebook.com/groups/downgrab\" target=\"_blank\" rel=\"noopener\" onclick=\"return confirm('Open this link?\\n\\n'+this.href);\">facebook.com/DownGrab</a><br>- будет дополняться</blockquote><br><br>В планах и другие, следите за новостями&#33;<br><br>Будем благодарны за подписки и сарафанное радио.<br>Продолжаем работать&#33; <tg-emoji emoji-id=\"5220085642192500606\"><i class=\"emoji\" style=\"background-image:url('//telegram.org/img/emoji/40/F09F98BC.png')\"><b>😼</b></i></tg-emoji>",
+  "videos": 0,
+  "service": false,
+  "unsupported": true,
+  "date": "2026-10-17T16:00:44+00:00",
+  "reply": false,
+  "images": [
+   "8_1.jpg"
+  ]
  }
 ]
