@@ -32,6 +32,52 @@ LANDING = {"ru": "/", "en": "/en/", "uk": "/uk/"}
 MONTHS = ["января", "февраля", "марта", "апреля", "мая", "июня", "июля", "августа", "сентября", "октября", "ноября", "декабря"]
 ALLOWED = {"b", "strong", "i", "em", "u", "s", "del", "code", "pre", "blockquote", "a", "br"}
 
+# ---- share block (same code in downgrab-site-build.py and .github/scripts/blog_sync.py) ----
+from urllib.parse import quote as _q
+SHARE_ICONS = {
+ "tg": '<path d="M9.78 15.27l-.4 5.6c.57 0 .82-.25 1.12-.54l2.69-2.57 5.58 4.08c1.02.57 1.75.27 2.02-.94L24.45 3.2c.33-1.5-.54-2.09-1.53-1.72L1.4 9.73c-1.47.57-1.45 1.39-.25 1.76l5.5 1.71 12.77-8.05c.6-.4 1.15-.18.7.22" transform="translate(-.3 0) scale(.96)"/>',
+ "wa": '<path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 1.8a8.2 8.2 0 1 1-4.2 15.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 0 1 12 3.8zm-3.3 4.4c-.2 0-.5 0-.7.3-.3.3-1 1-1 2.4s1 2.8 1.2 3c.1.2 2 3.2 5 4.4 2.5 1 3 .8 3.5.7.6 0 1.8-.7 2-1.4.3-.7.3-1.3.2-1.4l-.6-.4-2-1c-.3 0-.5-.1-.7.2l-.9 1.1c-.2.2-.3.2-.6.1-.3-.2-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.5-.5.3-.5v-.5l-.9-2.2c-.2-.6-.5-.5-.7-.5h-.6z"/>',
+ "vk": '<path d="M13.2 18C6.6 18 2.8 13.5 2.6 6h3.3c.1 5.5 2.6 7.8 4.5 8.3V6h3.1v4.7c1.9-.2 3.9-2.4 4.6-4.7h3.1c-.5 2.9-2.7 5-4.2 5.9 1.5.7 4 2.6 4.9 6.1h-3.4c-.7-2.3-2.6-4.1-5-4.4V18h-.3z"/>',
+ "x": '<path d="M17.8 3h3.1l-6.8 7.7L22 21h-6.2l-4.9-6.4L5.3 21H2.2l7.2-8.3L1.8 3h6.4l4.4 5.8L17.8 3zm-1.1 16.2h1.7L7.4 4.7H5.6l11.1 14.5z"/>',
+ "copy": '<path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M10 14a4.5 4.5 0 0 0 6.4 0l3.2-3.2a4.5 4.5 0 0 0-6.4-6.4L11.8 5.8M14 10a4.5 4.5 0 0 0-6.4 0l-3.2 3.2a4.5 4.5 0 0 0 6.4 6.4l1.4-1.4"/>',
+ "ok": '<path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" d="M5 12.5l4.5 4.5L19 7.5"/>',
+ "share": '<path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M12 3v12M7.5 7.5 12 3l4.5 4.5M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-7"/>',
+}
+SHARE_L10N = {
+ "ru": {"tg": "Поделиться в Telegram", "wa": "Поделиться в WhatsApp", "vk": "Поделиться во ВКонтакте", "x": "Поделиться в X", "copy": "Скопировать ссылку", "copied": "Ссылка скопирована", "share": "Поделиться…"},
+ "en": {"tg": "Share on Telegram", "wa": "Share on WhatsApp", "vk": "Share on VK", "x": "Share on X", "copy": "Copy link", "copied": "Link copied", "share": "Share…"},
+ "uk": {"tg": "Поділитися в Telegram", "wa": "Поділитися у WhatsApp", "vk": "Поділитися у VK", "x": "Поділитися в X", "copy": "Скопіювати посилання", "copied": "Посилання скопійовано", "share": "Поділитися…"},
+}
+SHARE_CSS = """.share{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:10px}
+.share .sl{color:var(--mut);font-size:15px;margin-right:4px}
+.share a,.share button{display:inline-grid;place-items:center;width:42px;height:42px;border-radius:12px;border:1px solid var(--line);background:var(--card);color:var(--mut);cursor:pointer;padding:0;transition:color .15s,border-color .15s,transform .15s}
+.share a:hover,.share button:hover,.share a:focus-visible,.share button:focus-visible{color:var(--txt);border-color:#3a4a66;transform:translateY(-1px);text-decoration:none}
+.share svg{width:20px;height:20px;fill:currentColor}
+.share [hidden]{display:none}
+.share .ok{color:#3ddc84;border-color:#2c6b48}
+.share .tip{font-size:13px;color:#3ddc84;min-width:1px}
+@media(max-width:480px){.share .sl{flex-basis:100%;text-align:center;margin:0}.shrow .share .sl{text-align:left}}"""
+SHARE_JS = ("<script>(function(){document.querySelectorAll('.share').forEach(function(b){var u=b.dataset.url,t=b.dataset.text;"
+ "var n=b.querySelector('.sh-native');if(n&&navigator.share&&matchMedia('(pointer:coarse)').matches){n.hidden=false;n.onclick=function(){navigator.share({title:document.title,text:t,url:u}).catch(function(){})}}"
+ "var c=b.querySelector('.sh-copy'),tip=b.querySelector('.tip');if(c){c.hidden=false;var ic=c.innerHTML;c.onclick=function(){var done=function(){c.classList.add('ok');c.innerHTML=b.dataset.okicon;if(tip)tip.textContent=c.dataset.done;"
+ "setTimeout(function(){c.classList.remove('ok');c.innerHTML=ic;if(tip)tip.textContent=''},2000)};"
+ "if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(u).then(done,function(){prompt('',u)})}else{prompt('',u)}}}})})()</script>")
+
+def share_block(url, text, lang, label):
+    L = SHARE_L10N[lang]; e = lambda s: html.escape(s, True)
+    svg = lambda k: f'<svg viewBox="0 0 24 24" aria-hidden="true">{SHARE_ICONS[k]}</svg>'
+    links = [("tg", f"https://t.me/share/url?url={_q(url, safe='')}&text={_q(text, safe='')}"),
+             ("wa", f"https://wa.me/?text={_q(text + ' ' + url, safe='')}"),
+             ("vk", f"https://vk.com/share.php?url={_q(url, safe='')}"),
+             ("x", f"https://twitter.com/intent/tweet?url={_q(url, safe='')}&text={_q(text, safe='')}")]
+    a = "".join(f'<a href="{e(h)}" target="_blank" rel="noopener nofollow" aria-label="{e(L[k])}" title="{e(L[k])}">{svg(k)}</a>' for k, h in links)
+    return (f'<div class="share" role="group" aria-label="{e(label)}" data-url="{e(url)}" data-text="{e(text)}" data-okicon="{e(svg("ok"))}">'
+            f'<span class="sl">{e(label)}</span>'
+            f'<button type="button" class="sh-native" hidden aria-label="{e(L["share"])}" title="{e(L["share"])}">{svg("share")}</button>{a}'
+            f'<button type="button" class="sh-copy" hidden aria-label="{e(L["copy"])}" title="{e(L["copy"])}" data-done="{e(L["copied"])}">{svg("copy")}</button>'
+            f'<span class="tip" aria-live="polite"></span></div>')
+# ---- end share block ----
+
 def fetch(url, binary=False):
     req = urllib.request.Request(url, headers={"User-Agent": UA, "Accept-Language": "ru,en;q=0.8"})
     with urllib.request.urlopen(req, timeout=30) as r:
@@ -237,9 +283,11 @@ article .body.rich blockquote{border-left:3px solid var(--acc);background:rgba(4
 .btns{display:flex;flex-wrap:wrap;gap:10px;margin:24px 0}.btn{display:inline-flex;align-items:center;gap:8px;min-height:48px;padding:0 20px;border-radius:14px;font-weight:700;border:1px solid var(--line);color:var(--txt);background:var(--card)}
 .btn:hover{text-decoration:none;filter:brightness(1.1)}.btn.p{background:linear-gradient(135deg,#2aabee,#229ed9);border:0;color:#fff}
 .empty{text-align:center;padding:40px 20px}.empty .em{font-size:56px}
+""" + SHARE_CSS + """
+article+.shrow{margin:28px 0 0;padding:18px 0 0;border-top:1px solid var(--line)}article+.shrow .share{justify-content:flex-start}
 footer{border-top:1px solid var(--line);padding:24px 0 32px;margin-top:40px;color:var(--mut);font-size:14px;text-align:center}footer a{margin:0 8px}"""
 
-def shell(title, desc, canonical, body, rel, og_image=None, ld=None, current="blog"):
+def shell(title, desc, canonical, body, rel, og_image=None, ld=None, current="blog", js=""):
     og = og_image or f"{BASE_URL}/og.png"
     ldj = f'<script type="application/ld+json">{json.dumps(ld, ensure_ascii=False)}</script>' if ld else ""
     e = lambda s: html.escape(s, True)
@@ -274,7 +322,7 @@ def shell(title, desc, canonical, body, rel, og_image=None, ld=None, current="bl
 {body}
 </main>
 <footer><a href="{BOT}">🤖 @DownGrabBot</a><a href="https://t.me/{CHANNEL}">📢 @{CHANNEL}</a><a href="https://t.me/kartkino">👤 @kartkino</a><br>© 2026 DownGrab 😺</footer>
-</body>
+{js}</body>
 </html>
 """
 
@@ -307,6 +355,7 @@ def render(entries, keep_imgs=frozenset()):
         meta = ru_date(p["date"])
         body = (f'<article><h1>{e(p["title"])}</h1><div class="meta">{e(meta)}</div>'
                 f'{f"<div class=gal>{gal}</div>" if gal else ""}<div class="body{' rich' if p['rich'] else ''}">{p["body"]}</div>{vid}</article>'
+                f'<div class="shrow">{share_block(f"{BASE_URL}/blog/{name}", p["title"] + " — DownGrab 😺", "ru", "Поделиться:")}</div>'
                 f'<div class="btns"><a class="btn p" href="{BOT}">🤖 Скачать видео в @DownGrabBot</a>'
                 f'<a class="btn" href="https://t.me/{CHANNEL}/{p["id"]}">✈️ Открыть пост в Telegram</a></div>'
                 f'<p><a href="./">← Все посты</a></p>')
@@ -316,7 +365,7 @@ def render(entries, keep_imgs=frozenset()):
               "mainEntityOfPage": f'{BASE_URL}/blog/{name}'}
         if og: ld["image"] = og
         write(os.path.join(BLOG, name), shell(f'{p["title"]} — блог DownGrab', p["desc"] or p["title"],
-              f'{BASE_URL}/blog/{name}', body, "../", og_image=og, ld=ld, current="post"))
+              f'{BASE_URL}/blog/{name}', body, "../", og_image=og, ld=ld, current="post", js=SHARE_JS))
     # remove stale post pages / images
     used = {i for p in entries for i in p["images"]} | set(keep_imgs) | {p["cover"] for p in entries if p["cover"]}
     for f in os.listdir(BLOG):
