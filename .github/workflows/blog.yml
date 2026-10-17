@@ -1,0 +1,38 @@
+name: Blog sync from Telegram
+
+on:
+  schedule:
+    - cron: "17 */6 * * *"   # every 6 hours
+  workflow_dispatch: {}       # "Run workflow" button
+
+permissions:
+  contents: write
+
+concurrency:
+  group: blog-sync
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Scrape t.me/s/DownGrab and rebuild blog
+        env:
+          CHANNEL: DownGrab
+          BASE_URL: https://downgrab.github.io
+        run: python .github/scripts/blog_sync.py
+      - name: Commit changes (blog/ and sitemap.xml only)
+        run: |
+          git config user.name "downgrab-blog-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A blog sitemap.xml
+          if git diff --cached --quiet; then
+            echo "No changes"
+          else
+            git commit -m "Blog: sync from Telegram"
+            git push
+          fi
