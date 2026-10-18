@@ -72,5 +72,17 @@
   "images": [
    "10_1.jpg"
   ]
+ },
+ {
+  "id": 11,
+  "text_html": "<tg-emoji emoji-id=\"5312396407917790451\"><i class=\"emoji\" style=\"background-image:url('//telegram.org/img/emoji/40/F09FA4A9.png')\"><b>🤩</b></i></tg-emoji> Был замечен и исправлен нейро-баг с лишним клонированием правой лапки Феди в 22 стикере нашего первого набора, который вы кстати можете добавить к себе по ссылке: <a href=\"http://t.me/addstickers/DownGrab\" target=\"_blank\" rel=\"noopener\">t.me/addstickers/DownGrab</a>",
+  "videos": 0,
+  "service": false,
+  "unsupported": true,
+  "date": "2026-10-18T05:34:55+00:00",
+  "reply": false,
+  "images": [
+   "11_1.jpg"
+  ]
  }
 ]
