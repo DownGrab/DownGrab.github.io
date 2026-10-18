@@ -84,5 +84,17 @@
   "images": [
    "11_1.jpg"
   ]
+ },
+ {
+  "id": 12,
+  "text_html": "<b><tg-emoji emoji-id=\"5467583879948803288\"><i class=\"emoji\" style=\"background-image:url('//telegram.org/img/emoji/40/F09F8EAE.png')\"><b>🎮</b></i></tg-emoji></b><b> Глобальный Апдейт геймификации </b><a href=\"https://t.me/DownGrabBot\" target=\"_blank\" rel=\"noopener\" onclick=\"return confirm('Open this link?\\n\\n'+this.href);\"><b>DownGrab</b></a><b>&#33;</b><br><br>• Теперь в боте есть полноценная система уровней, опыта, достижений и наград в виде бесплатных дней VIP.<br><br>• Кроме того - Добавили котиков-тамагочи, за которыми можно ухаживать, с ними можно играть в мини-игры, собирать коллекции и вступать в кланы, всё это взаимосвязано и за прогресс кота вы сможете получать бонусные дни VIP статуса.<br><br>• На данный момент на выбор есть два котика, к которым проработаны десятки анимированных стикеров. <tg-emoji emoji-id=\"5379822790260055598\"><i class=\"emoji\" style=\"background-image:url('//telegram.org/img/emoji/40/F09F9982.png')\"><b>🙂</b></i></tg-emoji><tg-emoji emoji-id=\"5379822790260055598\"><i class=\"emoji\" style=\"background-image:url('//telegram.org/img/emoji/40/F09F9982.png')\"><b>🙂</b></i></tg-emoji><br><br>• Всё это уже работает на трёх языках&#33;<br><br>• Никаких рейтингов и поощрений за лишние скачивания. <br><br>• Хотим, чтобы геймификация приносила удовольствие, а не заставляла заниматься бессмысленной активностью.<br><br>• Механики буду продолжать развиваться.<br><br><blockquote>Скачивайте видео с любых платформ, прокачивайте профиль, выбивайте достижения, собирайте коллекции и заботьтесь о своём котике - всё в одном боте: <a href=\"https://t.me/DownGrabBot\" target=\"_blank\">@DownGrabBot</a>&#33;</blockquote>",
+  "videos": 0,
+  "service": false,
+  "unsupported": true,
+  "date": "2026-10-18T12:50:29+00:00",
+  "reply": false,
+  "images": [
+   "12_1.jpg"
+  ]
  }
 ]
