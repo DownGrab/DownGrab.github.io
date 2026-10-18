@@ -28,5 +28,49 @@
   "date": "2026-10-16T17:00:01+00:00",
   "reply": false,
   "images": []
+ },
+ {
+  "id": 6,
+  "text_html": "<b>А у нас появился полноценный сайт&#33;</b> <b><tg-emoji emoji-id=\"5386828444560530381\"><i class=\"emoji\" style=\"background-image:url('//telegram.org/img/emoji/40/F09F98BC.png')\"><b>😼</b></i></tg-emoji></b><br><br>Дорогие друзья, начинаем полномасштабное продвижение потихоньку. Сегодня организовали страницу проекта в различных сошл медиа, ссылки предоставим в следующем посте. Но самое главное - в глобальной сети теперь индексируется наш вебсайт с основной информацией о боте и автодублированием блога отсюда.<br><br><tg-emoji emoji-id=\"5447410659077661506\"><i class=\"emoji\" style=\"background-image:url('//telegram.org/img/emoji/40/F09F8C90.png')\"><b>🌐</b></i></tg-emoji> Можете ознакомиться здесь: <a href=\"https://downgrab.github.io/\" target=\"_blank\" rel=\"noopener\">https://downgrab.github.io</a>",
+  "videos": 0,
+  "service": false,
+  "unsupported": true,
+  "date": "2026-10-17T14:04:59+00:00",
+  "reply": false,
+  "images": []
+ },
+ {
+  "id": 8,
+  "text_html": "<b><tg-emoji emoji-id=\"5417876320761696693\"><i class=\"emoji\" style=\"background-image:url('//telegram.org/img/emoji/40/E29C88.png')\"><b>✈</b></i></tg-emoji></b><b> Наши страницы во всех соцсетях</b>&#33;<br><br><blockquote>На данный момент мы есть в следующем:<br>- <a href=\"http://vk.ru/DownGrab\" target=\"_blank\" rel=\"noopener\" onclick=\"return confirm('Open this link?\\n\\n'+this.href);\">vk.ru/DownGrab</a><br>- <a href=\"http://x.com/DownGrabBot\" target=\"_blank\" rel=\"noopener\" onclick=\"return confirm('Open this link?\\n\\n'+this.href);\">x.com/DownGrabBot</a><br>- <a href=\"http://facebook.com/groups/downgrab\" target=\"_blank\" rel=\"noopener\" onclick=\"return confirm('Open this link?\\n\\n'+this.href);\">facebook.com/DownGrab</a><br>- будет дополняться</blockquote><br><br>В планах и другие, следите за новостями&#33;<br><br>Будем благодарны за подписки и сарафанное радио.<br>Продолжаем работать&#33; <tg-emoji emoji-id=\"5220085642192500606\"><i class=\"emoji\" style=\"background-image:url('//telegram.org/img/emoji/40/F09F98BC.png')\"><b>😼</b></i></tg-emoji>",
+  "videos": 0,
+  "service": false,
+  "unsupported": true,
+  "date": "2026-10-17T16:00:44+00:00",
+  "reply": false,
+  "images": [
+   "8_1.jpg"
+  ]
+ },
+ {
+  "id": 9,
+  "text_html": "<tg-emoji emoji-id=\"5323420622598978583\"><i class=\"emoji\" style=\"background-image:url('//telegram.org/img/emoji/40/F09FA791E2808DF09F92BB.png')\"><b>🧑‍💻</b></i></tg-emoji> Работаем над масштабным апдейтом, который добавит элементы геймификации. Ждите анонс уже сегодня&#33; Текущая версия бота работает стабильно и в полном объёме.",
+  "videos": 0,
+  "service": false,
+  "unsupported": true,
+  "date": "2026-10-17T23:52:12+00:00",
+  "reply": false,
+  "images": []
+ },
+ {
+  "id": 10,
+  "text_html": "<tg-emoji emoji-id=\"5427009714745517609\"><i class=\"emoji\" style=\"background-image:url('//telegram.org/img/emoji/40/E29C85.png')\"><b>✅</b></i></tg-emoji><tg-emoji emoji-id=\"5368456936700263949\"><i class=\"emoji\" style=\"background-image:url('//telegram.org/img/emoji/40/F09F938D.png')\"><b>📍</b></i></tg-emoji> <b>Исправлен баг при скачке пина из Pinterest</b> в котором была карусель из видео, раньше присылались только первые кадры в таком случае, теперь все видео.<br><br>Спасибо за обращение, если найдете еще какие-либо баги - не стесняйтесь обращаться в директ канала, писать <a href=\"http://t.me/kartkino\" target=\"_blank\" rel=\"noopener\" onclick=\"return confirm('Open this link?\\n\\n'+this.href);\">админу</a> напрямую, или сообщать в общем <a href=\"https://t.me/+a2DtVbn9IDg4ZDNi\" target=\"_blank\" rel=\"noopener\" onclick=\"return confirm('Open this link?\\n\\n'+this.href);\">чате</a>&#33;  <tg-emoji emoji-id=\"5188530895425916374\"><i class=\"emoji\" style=\"background-image:url('//telegram.org/img/emoji/40/E29DA4.png')\"><b>❤</b></i></tg-emoji><br><br><tg-emoji emoji-id=\"5226512880362332956\"><i class=\"emoji\" style=\"background-image:url('//telegram.org/img/emoji/40/F09F9396.png')\"><b>📖</b></i></tg-emoji> <b>Пока чинили баг узнали интересный факт:</b> на данный момент создать карусель из видео в Pinterest нельзя, то, что вы находите - это по сути ограниченные экземпляры, которые были созданы пока такая возможность была.<br><br>• Сейчас при попытке это сделать вам лишь позволят склеить видео c остальными фото/видео в общий ролик в рамках одного пина или загрузить каждый экземпляр в отдельные пины.",
+  "videos": 0,
+  "service": false,
+  "unsupported": true,
+  "date": "2026-10-18T02:30:57+00:00",
+  "reply": false,
+  "images": [
+   "10_1.jpg"
+  ]
  }
 ]
