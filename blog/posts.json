@@ -132,5 +132,15 @@
   "images": [
    "18_1.jpg"
   ]
+ },
+ {
+  "id": 19,
+  "text_html": "Скачивания с ютуб временно не работают.<br><br><tg-emoji emoji-id=\"5472114250107352713\"><i class=\"emoji\" style=\"background-image:url('//telegram.org/img/emoji/40/F09F9088.png')\"><b>🐈</b></i></tg-emoji> Котики работают над исправлением&#33;",
+  "videos": 0,
+  "service": false,
+  "unsupported": true,
+  "date": "2026-10-24T10:38:44+00:00",
+  "reply": false,
+  "images": []
  }
 ]
