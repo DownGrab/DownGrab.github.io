@@ -142,5 +142,17 @@
   "date": "2026-10-24T10:38:44+00:00",
   "reply": false,
   "images": []
+ },
+ {
+  "id": 21,
+  "text_html": "<tg-emoji emoji-id=\"5372981976804366741\"><i class=\"emoji\" style=\"background-image:url('//telegram.org/img/emoji/40/F09FA496.png')\"><b>🤖</b></i></tg-emoji><b> Небольшое техническое обновление&#33;</b><br><br>Улучшил работу бота с YouTube, чтобы скачивание видео и музыки было стабильнее и возникало меньше проблем при обработке ссылок.<br><br>Вложил дополнительные ресурсы в это направление, потому что хочу, чтобы бот работал не только функционально, но и надежно.<br><br><tg-emoji emoji-id=\"5021905410089550576\"><i class=\"emoji\" style=\"background-image:url('//telegram.org/img/emoji/40/E29C85.png')\"><b>✅</b></i></tg-emoji> Добавили также возможность скачивать с ютуба файлом через команду /file (работает во всех чатах с ботом).<br><br><blockquote>Продолжаю улучшать <a href=\"https://t.me/DownGrabBot\" target=\"_blank\">@DownGrabBot</a>, спасибо, что пользуетесь&#33;</blockquote><br><a href=\"?q=%23%D0%BF%D0%B0%D1%82%D1%87\">#патч@DownGrab</a>",
+  "videos": 0,
+  "service": false,
+  "unsupported": true,
+  "date": "2026-10-24T13:28:47+00:00",
+  "reply": false,
+  "images": [
+   "21_1.jpg"
+  ]
  }
 ]
