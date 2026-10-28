@@ -154,5 +154,17 @@
   "images": [
    "21_1.jpg"
   ]
+ },
+ {
+  "id": 22,
+  "text_html": "<tg-emoji emoji-id=\"5465287090352693530\"><i class=\"emoji\" style=\"background-image:url('//telegram.org/img/emoji/40/F09F8EB6.png')\"><b>🎶</b></i></tg-emoji> <b>Обновили систему скачивания MP3 в </b><a href=\"https://t.me/DownGrabBot\" target=\"_blank\"><b>@DownGrabBot</b></a> (работает с YouTube)<b>&#33;</b><br><br><blockquote>Теперь бот умнее работает с длинными треками, а ограничения стали понятнее.</blockquote><br><br><b><tg-emoji emoji-id=\"5463107823946717464\"><i class=\"emoji\" style=\"background-image:url('//telegram.org/img/emoji/40/F09F8EB5.png')\"><b>🎵</b></i></tg-emoji></b><b> Что изменилось:</b><br>• Без VIP можно скачивать MP3 длительностью до 3 часов.<br>• С <code>/VIP</code> доступны треки до 12 часов и размером до 500 МБ.<br>• Для длинных записей бот автоматически подбирает битрейт, чтобы файл поместился в лимит.<br><br>• Если для скачивания нужен VIP, кнопка MP3 останется на месте, но будет отмечена замком и объяснит, в чём ограничение.<br>• Также обновили подсказки в <code>/help</code> на русском, украинском и английском языках.<br><br><b><i class=\"emoji\" style=\"background-image:url('//telegram.org/img/emoji/40/F09F90B1.png')\"><b>🐱</b></i> Меньше загадок, больше музыки, лекций и подкастов&#33;</b><br>Пробуйте обновлённый <a href=\"http://t.me/downgrabbot\" target=\"_blank\" rel=\"noopener\" onclick=\"return confirm('Open this link?\\n\\n'+this.href);\">DownGrabBot</a>.<br><br><a href=\"?q=%23%D0%BF%D0%B0%D1%82%D1%87\">#патч@DownGrab</a>",
+  "videos": 0,
+  "service": false,
+  "unsupported": true,
+  "date": "2026-10-28T10:40:14+00:00",
+  "reply": false,
+  "images": [
+   "22_1.jpg"
+  ]
  }
 ]
